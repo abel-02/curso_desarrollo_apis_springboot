@@ -6,6 +6,7 @@ import com.redo.tp_Final.models.Venta;
 import com.redo.tp_Final.services.ServiceVenta;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -28,5 +29,8 @@ public class VentaController {
     }
     public List<Producto> listarProductosDeUnaVenta(Long idVenta){
         return servicio.listarProductosDeUnaVenta(idVenta);
+    }
+    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia){
+        return servicio.obtenerMontoYCantidadDeVentasEnUnDia(dia);
     }
 }

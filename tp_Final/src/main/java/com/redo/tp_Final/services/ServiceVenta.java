@@ -4,6 +4,7 @@ import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,6 +37,11 @@ public class ServiceVenta implements IServiceVenta{
 
     @Override
     public List<Producto> listarProductosDeUnaVenta(Long idVenta) {
+        return null;
+    }
+
+    @Override
+    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia) {
         return null;
     }
 }
