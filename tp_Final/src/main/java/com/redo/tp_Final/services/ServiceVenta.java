@@ -1,5 +1,6 @@
 package com.redo.tp_Final.services;
 
+import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,10 @@ public class ServiceVenta implements IServiceVenta{
     @Override
     public void modificarVenta(Long idVenta, Venta venta) {
 
+    }
+
+    @Override
+    public List<Producto> listarProductosDeUnaVenta(Long idVenta) {
+        return null;
     }
 }

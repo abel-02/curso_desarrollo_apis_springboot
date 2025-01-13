@@ -1,13 +1,16 @@
 package com.redo.tp_Final.controllers;
 
 import com.redo.tp_Final.models.Cliente;
+import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
+import com.redo.tp_Final.services.ServiceVenta;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 public class VentaController {
+    private ServiceVenta servicio;
     public void registrarVenta(){
 
     }
@@ -22,5 +25,8 @@ public class VentaController {
     }
     public void editarVenta(){
 
+    }
+    public List<Producto> listarProductosDeUnaVenta(Long idVenta){
+        return servicio.listarProductosDeUnaVenta(idVenta);
     }
 }

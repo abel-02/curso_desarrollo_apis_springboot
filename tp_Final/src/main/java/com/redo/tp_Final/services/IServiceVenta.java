@@ -1,5 +1,6 @@
 package com.redo.tp_Final.services;
 
+import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface IServiceVenta {
     void eliminarVenta(Long idVenta);
 
     void modificarVenta(Long idVenta, Venta venta);
+
+    List<Producto> listarProductosDeUnaVenta(Long idVenta);
 }
