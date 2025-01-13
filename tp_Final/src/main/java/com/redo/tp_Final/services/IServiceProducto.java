@@ -14,4 +14,6 @@ public interface IServiceProducto {
     void eliminarProducto(Long idProducto);
 
     void modificarProducto(Long idProducto, Producto producto);
+
+    List<Producto> devolverProductosConCantidadMenorA(int cantidad);
 }

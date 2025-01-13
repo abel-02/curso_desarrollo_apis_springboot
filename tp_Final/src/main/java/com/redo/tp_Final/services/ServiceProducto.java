@@ -31,4 +31,9 @@ public class ServiceProducto implements IServiceProducto{
     public void modificarProducto(Long idProducto, Producto producto) {
 
     }
+
+    @Override
+    public List<Producto> devolverProductosConCantidadMenorA(int cantidad) {
+        return null;
+    }
 }
