@@ -1,25 +1,35 @@
 package com.redo.tp_Final.controllers;
 
 import com.redo.tp_Final.models.Cliente;
-import org.springframework.web.bind.annotation.RestController;
+import com.redo.tp_Final.services.ServiceCliente;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/clientes")
 public class ClienteController {
-    public void registrarCliente(){
+    @Autowired
+    private ServiceCliente servicio;
+    @PostMapping("/crear")
+    public void registrarCliente(@RequestBody Cliente cliente){
 
     }
+    @RequestMapping("")
     public List<Cliente> devolverListaCompleta(){
         return null;
     }
-    public Cliente devolverCliente(){
+    @RequestMapping("/{idCliente}")
+    public Cliente devolverCliente(@PathVariable Long idCliente){
         return null;
     }
-    public void eliminarCliente(){
+    @DeleteMapping("/eliminar/{idCliente}")
+    public void eliminarCliente(@PathVariable Long idCliente){
 
     }
-    public void editarCliente(){
+    @PutMapping("/editar/{idCliente}")
+    public void editarCliente(@PathVariable Long idCliente){
 
     }
 }

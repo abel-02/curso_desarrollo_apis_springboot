@@ -2,12 +2,14 @@ package com.redo.tp_Final.controllers;
 
 import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.services.ServiceProducto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 public class ProductoController {
+    @Autowired
     private ServiceProducto servicio;
     public void crearProducto(){
 
