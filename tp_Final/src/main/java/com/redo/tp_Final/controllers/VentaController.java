@@ -5,34 +5,42 @@ import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 import com.redo.tp_Final.services.ServiceVenta;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@RequestMapping("/ventas")
 public class VentaController {
     @Autowired
     private ServiceVenta servicio;
+    @PostMapping("/crear")
     public void registrarVenta(){
 
     }
+    @RequestMapping("")
     public List<Venta> devolverListaCompleta(){
         return null;
     }
-    public Venta devolverVenta(){
+    @RequestMapping("/{codigoVenta}")
+    public Venta devolverVenta(@PathVariable Long codigoVenta){
         return null;
     }
-    public void eliminarVenta(){
+    @DeleteMapping("/eliminar/{codigoVenta}")
+    public void eliminarVenta(@PathVariable Long codigoVenta){
 
     }
-    public void editarVenta(){
+    @PutMapping("/editar/{codigoVenta}")
+    public void editarVenta(@PathVariable Long codigoVenta){
 
     }
-    public List<Producto> listarProductosDeUnaVenta(Long idVenta){
-        return servicio.listarProductosDeUnaVenta(idVenta);
+    @RequestMapping("/productos/{codigoVenta}")
+    public List<Producto> listarProductosDeUnaVenta(@PathVariable Long codigoVenta){
+        return servicio.listarProductosDeUnaVenta(codigoVenta);
     }
-    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia){
-        return servicio.obtenerMontoYCantidadDeVentasEnUnDia(dia);
+    @RequestMapping("/{fechaVenta}")
+    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta){
+        return servicio.obtenerMontoYCantidadDeVentasEnUnDia(fechaVenta);
     }
 }
