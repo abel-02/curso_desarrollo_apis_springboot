@@ -14,22 +14,22 @@ public class ClienteController {
     private ServiceCliente servicio;
     @PostMapping("/crear")
     public void registrarCliente(@RequestBody Cliente cliente){
-
+        servicio.registrarCliente(cliente);
     }
     @RequestMapping("")
     public List<Cliente> devolverListaCompleta(){
-        return null;
+        return servicio.listarTodosLosClientes();
     }
     @RequestMapping("/{idCliente}")
     public Cliente devolverCliente(@PathVariable Long idCliente){
-        return null;
+        return servicio.obtenerCliente(idCliente);
     }
     @DeleteMapping("/eliminar/{idCliente}")
     public void eliminarCliente(@PathVariable Long idCliente){
-
+        servicio.eliminarCliente(idCliente);
     }
     @PutMapping("/editar/{idCliente}")
-    public void editarCliente(@PathVariable Long idCliente){
-
+    public void editarCliente(@PathVariable Long idCliente, @RequestBody Cliente nuevoCliente){
+        servicio.modificarCliente(idCliente, nuevoCliente);
     }
 }

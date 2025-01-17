@@ -13,5 +13,5 @@ public interface IServiceCliente {
 
     void eliminarCliente(Long idCliente);
 
-    void modificarCliente(Long idCliente, Cliente cliente);
+    void modificarCliente(Long idCliente, Cliente nuevoCliente);
 }
