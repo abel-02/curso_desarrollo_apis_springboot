@@ -14,23 +14,25 @@ public class ProductoController {
     private ServiceProducto servicio;
     @PostMapping("/crear")
     public void crearProducto(@RequestBody Producto producto){
-
+        servicio.registrarProducto(producto);
     }
     @RequestMapping("")
     public List<Producto> devolverListaCompleta(){
-        return null;
+
+        return servicio.listarTodosLosProductos();
     }
     @RequestMapping("/{idProducto}")
     public Producto devolverUnProducto(@PathVariable Long idProducto){
-       return null;
+
+        return servicio.obtenerProducto(idProducto);
     }
     @DeleteMapping("/{idProducto}")
     public void eliminarUnProducto(@PathVariable Long idProducto){
-
+        servicio.eliminarProducto(idProducto);
     }
     @PutMapping("/{idProducto}")
-    public void editarUnProducto(@PathVariable Long idProducto){
-
+    public void editarUnProducto(@PathVariable Long idProducto, Producto nuevoProducto){
+        servicio.modificarProducto(idProducto, nuevoProducto);
     }
     @RequestMapping("/falta_stock")
     public List<Producto> productosConCantidadMenorA(int cantidad){
