@@ -18,12 +18,10 @@ public class ProductoController {
     }
     @RequestMapping("")
     public List<Producto> devolverListaCompleta(){
-
         return servicio.listarTodosLosProductos();
     }
     @RequestMapping("/{idProducto}")
     public Producto devolverUnProducto(@PathVariable Long idProducto){
-
         return servicio.obtenerProducto(idProducto);
     }
     @DeleteMapping("/{idProducto}")

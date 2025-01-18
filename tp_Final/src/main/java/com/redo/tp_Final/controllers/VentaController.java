@@ -16,24 +16,24 @@ public class VentaController {
     @Autowired
     private ServiceVenta servicio;
     @PostMapping("/crear")
-    public void registrarVenta(){
-
+    public void registrarVenta(@RequestBody Venta venta){
+        servicio.registrarVenta(venta);
     }
     @RequestMapping("")
     public List<Venta> devolverListaCompleta(){
-        return null;
+        return servicio.listarTodasLasVentas();
     }
     @RequestMapping("/{codigoVenta}")
     public Venta devolverVenta(@PathVariable Long codigoVenta){
-        return null;
+        return servicio.obtenerVenta(codigoVenta);
     }
     @DeleteMapping("/eliminar/{codigoVenta}")
     public void eliminarVenta(@PathVariable Long codigoVenta){
-
+        servicio.eliminarVenta(codigoVenta);
     }
     @PutMapping("/editar/{codigoVenta}")
-    public void editarVenta(@PathVariable Long codigoVenta){
-
+    public void editarVenta(@PathVariable Long codigoVenta, @RequestBody Venta nuevaVenta){
+        servicio.modificarVenta(codigoVenta, nuevaVenta);
     }
     @RequestMapping("/productos/{codigoVenta}")
     public List<Producto> listarProductosDeUnaVenta(@PathVariable Long codigoVenta){
