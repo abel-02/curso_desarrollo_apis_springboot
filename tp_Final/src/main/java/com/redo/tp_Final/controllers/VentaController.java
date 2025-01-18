@@ -40,7 +40,7 @@ public class VentaController {
         return servicio.listarProductosDeUnaVenta(codigoVenta);
     }
     @RequestMapping("/{fechaVenta}")
-    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta){
+    public String obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta){
         return servicio.obtenerMontoYCantidadDeVentasEnUnDia(fechaVenta);
     }
 }

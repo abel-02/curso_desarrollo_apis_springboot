@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -40,11 +41,23 @@ public class ServiceVenta implements IServiceVenta{
 
     @Override
     public List<Producto> listarProductosDeUnaVenta(Long idVenta) {
-        return null;
+        Venta venta = repositorio.findById(idVenta).orElse(null);
+        return venta.getListaProductos();
     }
 
     @Override
-    public List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia) {
-        return null;
+    public String obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia) {
+        List<Venta> ventas = repositorio.findAll();
+        double monto = 0;
+        int cantidadVentas = 0;
+
+        for(Venta v: ventas){
+            if(v.getFechaVenta().equals(dia)){
+                monto+= v.getTotal();
+                cantidadVentas++;
+            }
+        }
+
+        return monto + ", " + cantidadVentas;
     }
 }

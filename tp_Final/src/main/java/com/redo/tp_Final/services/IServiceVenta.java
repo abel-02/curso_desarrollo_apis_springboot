@@ -19,5 +19,5 @@ public interface IServiceVenta {
 
     List<Producto> listarProductosDeUnaVenta(Long idVenta);
 
-    List<Producto> obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia);
+    String obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia);
 }
