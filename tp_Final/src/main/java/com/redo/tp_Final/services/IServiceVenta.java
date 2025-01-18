@@ -1,5 +1,6 @@
 package com.redo.tp_Final.services;
 
+import com.redo.tp_Final.dto.VentaDTO;
 import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 
@@ -20,4 +21,6 @@ public interface IServiceVenta {
     List<Producto> listarProductosDeUnaVenta(Long idVenta);
 
     String obtenerMontoYCantidadDeVentasEnUnDia(LocalDate dia);
+
+    Venta ventaConElMayorMonto();
 }

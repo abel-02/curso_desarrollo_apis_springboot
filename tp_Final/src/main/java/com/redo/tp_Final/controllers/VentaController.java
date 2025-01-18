@@ -1,5 +1,6 @@
 package com.redo.tp_Final.controllers;
 
+import com.redo.tp_Final.dto.VentaDTO;
 import com.redo.tp_Final.models.Cliente;
 import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
@@ -42,5 +43,19 @@ public class VentaController {
     @RequestMapping("/{fechaVenta}")
     public String obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta){
         return servicio.obtenerMontoYCantidadDeVentasEnUnDia(fechaVenta);
+    }
+    @RequestMapping("/mayor_venta")
+    @ResponseBody
+    public VentaDTO ventaConMontoMasAlto(){
+        Venta venta = servicio.ventaConElMayorMonto();
+        VentaDTO ventaDto = new VentaDTO();
+
+        ventaDto.setCodigoVenta(venta.getCodigoVenta());
+        ventaDto.setTotal(venta.getTotal());
+        ventaDto.setCantidadProductos(venta.getListaProductos().size());
+        ventaDto.setNombreCliente(venta.getUnCliente().getNombre());
+        ventaDto.setApellidoCliente(venta.getUnCliente().getApellido());
+
+        return ventaDto;
     }
 }

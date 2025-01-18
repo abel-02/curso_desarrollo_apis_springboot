@@ -1,5 +1,6 @@
 package com.redo.tp_Final.services;
 
+import com.redo.tp_Final.dto.VentaDTO;
 import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 import com.redo.tp_Final.repository.VentaRepository;
@@ -59,5 +60,15 @@ public class ServiceVenta implements IServiceVenta{
         }
 
         return monto + ", " + cantidadVentas;
+    }
+    @Override
+    public Venta ventaConElMayorMonto() {
+        List<Venta> ventas = repositorio.findAll();
+        Venta ventaConMayorMonto = ventas.get(0);
+        for(Venta v: ventas){
+            if(v.getTotal() > ventaConMayorMonto.getTotal())
+                ventaConMayorMonto = v;
+        }
+        return ventaConMayorMonto;
     }
 }
