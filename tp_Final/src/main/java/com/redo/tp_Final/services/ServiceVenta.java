@@ -1,14 +1,14 @@
 package com.redo.tp_Final.services;
 
-import com.redo.tp_Final.dto.VentaDTO;
 import com.redo.tp_Final.models.Producto;
 import com.redo.tp_Final.models.Venta;
 import com.redo.tp_Final.repository.VentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,6 +43,8 @@ public class ServiceVenta implements IServiceVenta{
     @Override
     public List<Producto> listarProductosDeUnaVenta(Long idVenta) {
         Venta venta = repositorio.findById(idVenta).orElse(null);
+        if(venta == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encontro ventas ");
         return venta.getListaProductos();
     }
 
@@ -52,23 +54,34 @@ public class ServiceVenta implements IServiceVenta{
         double monto = 0;
         int cantidadVentas = 0;
 
-        for(Venta v: ventas){
-            if(v.getFechaVenta().equals(dia)){
-                monto+= v.getTotal();
+        for (Venta v : ventas) {
+            if (v.getFechaVenta().equals(dia)) {
+                monto += v.getTotal();
                 cantidadVentas++;
             }
         }
+
+        if (cantidadVentas == 0)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se registraron ventas ese día.");
 
         return monto + ", " + cantidadVentas;
     }
     @Override
     public Venta ventaConElMayorMonto() {
         List<Venta> ventas = repositorio.findAll();
+        if (ventas.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encontraron ventas registradas.");
+
+
         Venta ventaConMayorMonto = ventas.get(0);
-        for(Venta v: ventas){
-            if(v.getTotal() > ventaConMayorMonto.getTotal())
+        for (Venta v : ventas) {
+            if (v.getTotal() > ventaConMayorMonto.getTotal()) {
                 ventaConMayorMonto = v;
+            }
         }
         return ventaConMayorMonto;
     }
+
+
+
 }

@@ -40,13 +40,13 @@ public class VentaController {
     public List<Producto> listarProductosDeUnaVenta(@PathVariable Long codigoVenta){
         return servicio.listarProductosDeUnaVenta(codigoVenta);
     }
-    @RequestMapping("/{fechaVenta}")
-    public String obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta){
+    @RequestMapping("/fecha/{fechaVenta}")
+    public String obtenerMontoYCantidadDeVentasEnUnDia(@PathVariable LocalDate fechaVenta) {
         return servicio.obtenerMontoYCantidadDeVentasEnUnDia(fechaVenta);
     }
     @RequestMapping("/mayor_venta")
-    @ResponseBody
-    public VentaDTO ventaConMontoMasAlto(){
+ //   @ResponseBody
+    public VentaDTO ventaConMontoMasAlto() throws Exception {
         Venta venta = servicio.ventaConElMayorMonto();
         VentaDTO ventaDto = new VentaDTO();
 

@@ -29,11 +29,11 @@ public class ProductoController {
         servicio.eliminarProducto(idProducto);
     }
     @PutMapping("/editar/{idProducto}")
-    public void editarUnProducto(@PathVariable Long idProducto, Producto nuevoProducto){
+    public void editarUnProducto(@PathVariable Long idProducto, @RequestBody Producto nuevoProducto){
         servicio.modificarProducto(idProducto, nuevoProducto);
     }
     @RequestMapping("/falta_stock")
-    public List<Producto> productosConCantidadMenorA(int cantidad){
-        return servicio.devolverProductosConCantidadMenorA(cantidad);
+    public List<Producto> productosConCantidadMenorA(){
+        return servicio.devolverProductosConCantidadMenorA(5);
     }
 }
