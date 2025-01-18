@@ -24,11 +24,11 @@ public class ProductoController {
     public Producto devolverUnProducto(@PathVariable Long idProducto){
         return servicio.obtenerProducto(idProducto);
     }
-    @DeleteMapping("/{idProducto}")
+    @DeleteMapping("/eliminar/{idProducto}")
     public void eliminarUnProducto(@PathVariable Long idProducto){
         servicio.eliminarProducto(idProducto);
     }
-    @PutMapping("/{idProducto}")
+    @PutMapping("/editar/{idProducto}")
     public void editarUnProducto(@PathVariable Long idProducto, Producto nuevoProducto){
         servicio.modificarProducto(idProducto, nuevoProducto);
     }
