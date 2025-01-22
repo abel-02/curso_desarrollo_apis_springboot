@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.redo</groupId>
 	<artifactId>tp_Final</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>tp_Final</name>
 	<description>Api para bazar</description>
 	<url/>
