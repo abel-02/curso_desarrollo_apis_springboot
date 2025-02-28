@@ -1,0 +1,17 @@
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\controllers\ClienteController.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\controllers\ProductoController.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\controllers\VentaController.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\dto\VentaDTO.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\models\Cliente.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\models\Producto.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\models\Venta.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\repository\ClienteRepository.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\repository\ProductoRepository.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\repository\VentaRepository.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\IServiceCliente.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\IServiceProducto.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\IServiceVenta.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\ServiceCliente.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\ServiceProducto.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\services\ServiceVenta.java
+C:\Cursos\Java\TodoCode\curso_desarrollo_apis_springboot\tp_Final\src\main\java\com\redo\tp_Final\TpFinalApplication.java
